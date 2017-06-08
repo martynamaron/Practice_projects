@@ -1,7 +1,7 @@
-package com.company;
+package exercises;
 
 /**
- * Created by Martyna on 07/06/2017.
+ * Created by Martyna on 08/06/2017.
  */
 public class FizzBuzz {
 

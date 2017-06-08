@@ -1,8 +1,5 @@
 package utils;
 
-/**
- * Created by Martyna on 07/06/2017.
- */
 public class Print {
 
     private static final String STAR = "*";

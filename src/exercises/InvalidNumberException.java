@@ -1,8 +1,5 @@
-package com.company;
+package exercises;
 
-/**
- * Created by Martyna on 07/06/2017.
- */
 public class InvalidNumberException extends Throwable {
 
     public InvalidNumberException(String message){

@@ -1,9 +1,7 @@
-package com.company;
-
-import org.jetbrains.annotations.Contract;
+package exercises;
 
 /**
- * Created by Martyna on 07/06/2017.
+ * Created by Martyna on 08/06/2017.
  */
 public class PrimeNumberDetector {
 
@@ -14,7 +12,6 @@ public class PrimeNumberDetector {
         return detectPrimeNumber(n);
     }
 
-    @Contract(pure = true)
     private boolean detectPrimeNumber(int n) {
         if (n%2==0){
             return false;

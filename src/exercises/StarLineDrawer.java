@@ -1,11 +1,7 @@
-package com.company;
+package exercises;
 
-import org.jetbrains.annotations.Contract;
 import utils.Print;
 
-/**
- * Created by Martyna on 27/05/2017.
- */
 public class StarLineDrawer {
 
     private final int lineNumbers;
@@ -39,12 +35,10 @@ public class StarLineDrawer {
         }
     }
 
-    @Contract(pure = true)
     private static boolean isEdgeOfInnerSquare(int middleLines, int i) {
         return i == 2 || i == middleLines - 1;
     }
 
-    @Contract(pure = true)
     private static boolean isEmptyLine(int middleLines, int i) {
         return i == 1 || i == middleLines;
     }
