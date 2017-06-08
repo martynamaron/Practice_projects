@@ -1,6 +1,3 @@
-import java.util.HashMap;
-import java.util.Map;
-
 public enum Exercise {
 
     FIZZBUZZ(1, "FizzBuzz exercise"),
@@ -15,23 +12,11 @@ public enum Exercise {
         exerciseDescription = description;
     }
 
-    private static Map<Integer, Exercise> exerciseMap = new HashMap<>();
-
-    static {
-        for (Exercise exercise : Exercise.values()){
-            exerciseMap.put(exercise.getExerciseNumber(), exercise);
-        }
-    }
-
     public int getExerciseNumber(){
         return exerciseNumber;
     }
 
     public String getExerciseDescription(){
         return exerciseDescription;
-    }
-
-    public static Exercise getExercise(int exerciseNumber){
-        return exerciseMap.get(exerciseNumber);
     }
 }
