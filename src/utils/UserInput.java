@@ -4,15 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Martyna on 08/06/2017.
- */
 public class UserInput {
 
-    public static int read(){
+    public static final String PICK_EXERCISE = "Please enter the number of one of the exercises listed above," +
+            " which you would like to see: ";
+
+    public static int readPickedInteger(){
+        return readInteger(PICK_EXERCISE);
+    }
+
+    private static int readInteger(String question){
         int input = 0;
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter Integer:");
+        System.out.print(question);
         try {
             input = Integer.parseInt(br.readLine());
         } catch (NumberFormatException | IOException exception) {
