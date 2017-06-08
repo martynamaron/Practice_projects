@@ -3,6 +3,7 @@ public enum Exercise {
     FIZZBUZZ(1, "FizzBuzz exercise"),
     PRIME_NUMBER_DETECTOR(2, "Prime Number Detector program"),
     STAR_SQUARE_DRAWER(3, "Speed coding exercise - draw 2 squares out of stars"),
+    //https://www.youtube.com/watch?v=c18GjbnZXMw
     LOCKERS(4, "Placeholder - TED Riddle about Lockers");
 
     private final int exerciseNumber;
