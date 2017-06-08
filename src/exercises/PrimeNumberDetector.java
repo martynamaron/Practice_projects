@@ -1,11 +1,8 @@
 package exercises;
 
-/**
- * Created by Martyna on 08/06/2017.
- */
 public class PrimeNumberDetector {
 
-    public boolean isPrimeNumber(int n) throws InvalidNumberException{
+    public boolean isPrimeNumber(int n) throws InvalidNumberException {
         if (n >= 1000) {
             throw new InvalidNumberException("Integer too large");
         }
@@ -13,11 +10,11 @@ public class PrimeNumberDetector {
     }
 
     private boolean detectPrimeNumber(int n) {
-        if (n%2==0){
+        if (n % 2 == 0) {
             return false;
         }
-        for(int i=3;i*i<n;i+=2) {
-            if(n%i==0)
+        for (int i = 3; i * i < n; i += 2) {
+            if (n % i == 0)
                 return false;
         }
         return true;

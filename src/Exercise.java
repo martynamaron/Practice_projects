@@ -7,16 +7,16 @@ public enum Exercise {
     private final int exerciseNumber;
     private final String exerciseDescription;
 
-    Exercise(int number, String description){
+    Exercise(int number, String description) {
         exerciseNumber = number;
         exerciseDescription = description;
     }
 
-    public int getExerciseNumber(){
+    public int getExerciseNumber() {
         return exerciseNumber;
     }
 
-    public String getExerciseDescription(){
+    public String getExerciseDescription() {
         return exerciseDescription;
     }
 }
