@@ -2,9 +2,9 @@ package exercises;
 
 public class Lockers {
 
-    private boolean[] lockers = new boolean[101];
+    private static boolean[] lockers = new boolean[101];
 
-    public void whichLockersAreOpen() {
+    public static void whichLockersAreOpen() {
         for (int iteration = 1; iteration < 101; iteration++) {
             int start = 0;
             for (boolean lckr : lockers) {
