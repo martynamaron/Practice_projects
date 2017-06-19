@@ -1,8 +1,5 @@
 package exercises;
 
-/**
- * Created by Martyna on 08/06/2017.
- */
 public class FizzBuzz {
 
     public void printFizzBuzz() {
