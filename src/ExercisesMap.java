@@ -18,6 +18,7 @@ public class ExercisesMap extends HashMap<Integer, Exercise> {
     public void runChosenExercise(int exerciseNumber) {
         Exercise chosenExercise = getExercise(exerciseNumber);
         System.out.println("You chose: " + chosenExercise.getExerciseDescription());
+        chosenExercise.runExercise();
     }
 
     private Exercise getExercise(int exerciseNumber) {
