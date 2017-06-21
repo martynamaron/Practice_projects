@@ -28,7 +28,7 @@ public enum Exercise {
         }
     },
     //https://www.youtube.com/watch?v=c18GjbnZXMw
-    LOCKERS(4, "Placeholder - TED Riddle about Lockers") {
+    LOCKERS(4, "TED Riddle about Lockers") {
         @Override
         public void runExercise() {
             Lockers lockers = new Lockers();
