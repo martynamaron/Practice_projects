@@ -4,7 +4,7 @@ public enum Exercise {
 
     FIZZBUZZ(1, "FizzBuzz exercise") {
         @Override
-        public void runExercise(){
+        public void runExercise() {
             FizzBuzz fizzBuzz = new FizzBuzz();
             fizzBuzz.printFizzBuzz();
         }
@@ -15,7 +15,7 @@ public enum Exercise {
             PrimeNumberDetector primeNumberDetector = new PrimeNumberDetector();
             try {
                 primeNumberDetector.isPrimeNumber(90);
-            } catch (InvalidNumberException exception){
+            } catch (InvalidNumberException exception) {
                 System.out.println(exception.getMessage());
             }
         }
