@@ -4,7 +4,7 @@ public class Lockers {
 
     private static boolean[] lockers = new boolean[101];
 
-    public static void whichLockersAreOpen() {
+    public void whichLockersAreOpen() {
         for (int iteration = 1; iteration < 101; iteration++) {
             int start = 0;
             for (boolean lckr : lockers) {
@@ -13,7 +13,15 @@ public class Lockers {
                     start = start + iteration;
                 } else break;
             }
-            System.out.println("Locker " + iteration + " is " + lockers[iteration]);
+            System.out.println("Locker " + iteration + " is " + getLockerState(lockers[iteration]));
+        }
+    }
+
+    private String getLockerState(boolean isOpen){
+        if (isOpen) {
+            return "open";
+        } else {
+            return "closed";
         }
     }
 }
