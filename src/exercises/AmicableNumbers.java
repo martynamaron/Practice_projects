@@ -26,6 +26,7 @@ public class AmicableNumbers {
             sumOfAllAmicableNumbers += i;
             System.out.println(i);
         }
+        System.out.println("Sum of all amicable numbers is: " + sumOfAllAmicableNumbers);
         return sumOfAllAmicableNumbers;
     }
 
