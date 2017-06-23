@@ -13,8 +13,9 @@ public enum Exercise {
     PRIME_NUMBER_DETECTOR(2, "Prime Number Detector program") {
         @Override
         public void runExercise() {
+            final String INSTRUCTION = "Provide a number no greater than 1000 you'd like to check: ";
             PrimeNumberDetector primeNumberDetector = new PrimeNumberDetector();
-            int pickedNumber = UserInput.readPickedInteger();
+            int pickedNumber = UserInput.readInteger(INSTRUCTION);
             try {
                 System.out.println(primeNumberDetector.detectPrimeNumber(pickedNumber));
             } catch (InvalidNumberException exception) {
