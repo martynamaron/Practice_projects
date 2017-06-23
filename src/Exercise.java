@@ -1,4 +1,5 @@
 import exercises.*;
+import utils.UserInput;
 
 public enum Exercise {
 
@@ -13,8 +14,9 @@ public enum Exercise {
         @Override
         public void runExercise() {
             PrimeNumberDetector primeNumberDetector = new PrimeNumberDetector();
+            int pickedNumber = UserInput.readPickedInteger();
             try {
-                primeNumberDetector.isPrimeNumber(90);
+                System.out.println(primeNumberDetector.detectPrimeNumber(pickedNumber));
             } catch (InvalidNumberException exception) {
                 System.out.println(exception.getMessage());
             }

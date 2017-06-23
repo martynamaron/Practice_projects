@@ -2,14 +2,15 @@ package exercises;
 
 public class PrimeNumberDetector {
 
-    public boolean isPrimeNumber(int n) throws InvalidNumberException {
+    public String detectPrimeNumber(int n) throws InvalidNumberException {
         if (n >= 1000) {
             throw new InvalidNumberException("Integer too large");
         }
-        return detectPrimeNumber(n);
+
+        return isPrimeNumber(n)? "Number " + n + " is prime" : "Number " + n + " is not prime";
     }
 
-    private boolean detectPrimeNumber(int n) {
+    private boolean isPrimeNumber(int n) {
         if (n % 2 == 0) {
             return false;
         }
