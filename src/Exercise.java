@@ -45,6 +45,14 @@ public enum Exercise {
             AmicableNumbers amicableNumbers = new AmicableNumbers();
             amicableNumbers.findTheSumOfAllAmicableNumbers();
         }
+    },
+
+    //https://www.hackerrank.com/challenges/diagonal-difference
+    DIAGONAL_DIFFERENCE(6, "Diagonal difference of a square matrix") {
+        @Override
+        public void runExercise() {
+
+        }
     };
 
     private final int exerciseNumber;

@@ -1,3 +1,4 @@
+import exercises.DiagonalDifference;
 import utils.UserInput;
 
 public class Main {
@@ -6,8 +7,10 @@ public class Main {
 
         final String INSTRUCTION = "Please enter the number of one of the exercises listed above," +
                 " which you would like to see: ";
-        ExercisesMap exercisesMap = new ExercisesMap();
-        exercisesMap.printAllExercises();
-        exercisesMap.runChosenExercise(UserInput.readInteger(INSTRUCTION));
+//        ExercisesMap exercisesMap = new ExercisesMap();
+//        exercisesMap.printAllExercises();
+//        exercisesMap.runChosenExercise(UserInput.readInteger(INSTRUCTION));
+        DiagonalDifference diagonalDifference = new DiagonalDifference();
+        diagonalDifference.readNumber();
     }
 }
