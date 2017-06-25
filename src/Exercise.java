@@ -13,7 +13,6 @@ public enum Exercise {
     PRIME_NUMBER_DETECTOR(2, "Prime Number Detector program") {
         @Override
         public void runExercise() {
-            final String INSTRUCTION = "Provide a number no greater than 1000 you'd like to check: ";
             PrimeNumberDetector primeNumberDetector = new PrimeNumberDetector();
             int pickedNumber = UserInput.readInteger(INSTRUCTION);
             try {
@@ -26,7 +25,8 @@ public enum Exercise {
     STAR_SQUARE_DRAWER(3, "Speed coding exercise - draw 2 squares out of stars") {
         @Override
         public void runExercise() {
-            StarLineDrawer starLineDrawer = new StarLineDrawer(9);
+            int pickedNumber = UserInput.readInteger(INSTRUCTION);
+            StarLineDrawer starLineDrawer = new StarLineDrawer(pickedNumber);
             starLineDrawer.generateSquare();
         }
     },
@@ -49,6 +49,7 @@ public enum Exercise {
 
     private final int exerciseNumber;
     private final String exerciseDescription;
+    private static final String INSTRUCTION = "Provide a number no greater than 1000 you'd like to check: ";
 
     Exercise(int number, String description) {
         exerciseNumber = number;
