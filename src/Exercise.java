@@ -22,6 +22,7 @@ public enum Exercise {
             }
         }
     },
+    //http://www.softwire.com/blog/2016/04/06/speed-coding-2016-q1/
     STAR_SQUARE_DRAWER(3, "Speed coding exercise - draw 2 squares out of stars") {
         @Override
         public void runExercise() {
