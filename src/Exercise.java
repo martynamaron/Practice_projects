@@ -51,7 +51,8 @@ public enum Exercise {
     DIAGONAL_DIFFERENCE(6, "Diagonal difference of a square matrix") {
         @Override
         public void runExercise() {
-
+            DiagonalDifference diagonalDifference = new DiagonalDifference();
+            diagonalDifference.evaluateAbsoluteDifferenceOfDiagonals();
         }
     };
 
