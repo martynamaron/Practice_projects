@@ -48,12 +48,20 @@ public enum Exercise {
         }
     },
 
-    //https://www.hackerrank.com/challenges/diagonal-difference
+    //
     DIAGONAL_DIFFERENCE(6, "Diagonal difference of a square matrix") {
         @Override
         public void runExercise() {
             DiagonalDifference diagonalDifference = new DiagonalDifference();
             diagonalDifference.evaluateAbsoluteDifferenceOfDiagonals();
+        }
+    },
+
+    VALID_STRINGS(7, "Find a valid string") {
+        @Override
+        public void runExercise() {
+            ValidStrings validStrings = new ValidStrings("Martyna");
+            validStrings.isTheStringValid();
         }
     };
 
