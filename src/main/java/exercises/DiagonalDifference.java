@@ -3,7 +3,11 @@ package exercises;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-//Given a square matrix of size N xN , calculate the absolute difference between the sums of its diagonals.
+/**
+ * Given a square matrix of size N xN , calculate the absolute difference between the sums of its diagonals.
+ * https://www.hackerrank.com/challenges/diagonal-difference
+ */
+
 public class DiagonalDifference {
 
     private ArrayList<ArrayList<Integer>> matrix = new ArrayList<>();
