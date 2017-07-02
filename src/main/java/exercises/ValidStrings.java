@@ -9,44 +9,52 @@ public class ValidStrings {
 
     private final String stringToCheck;
 
-    public ValidStrings(String stringToCheck){
+    public ValidStrings(String stringToCheck) {
         this.stringToCheck = stringToCheck;
     }
 
     public boolean isTheStringValid() {
         char[] charArray = stringToCheck.toCharArray();
-        for (char a: charArray) {
+        for (char a : charArray) {
             System.out.println(a);
         }
         System.out.println();
-        areAllCharactersTheSameFrequency(charArray);
+        areAllCharacterFrequenciesEqual(charArray);
         return false;
     }
 
-    private boolean areAllCharactersTheSameFrequency(char[] string) {
+    private boolean areAllCharacterFrequenciesEqual(char[] string) {
+        Map<Character, Integer> frequencies = getCharFrequencyMap(string);
+
+        return areAllCharacterFrequenciesEqual(frequencies);
+    }
+
+    private boolean areAllCharacterFrequenciesEqual(Map<Character, Integer> frequencies) {
+        Collection<Integer> values = frequencies.values();
+        Iterator<Integer> iterator = values.iterator();
+        int firstValue = iterator.next();
+
+        while (iterator.hasNext()) {
+            if (!(iterator.next()).equals(firstValue)) {
+                System.out.println("String is NOT valid");
+                return false;
+            }
+        }
+        System.out.println("String is valid");
+        return true;
+    }
+
+    private Map<Character, Integer> getCharFrequencyMap(char[] string) {
         Map<Character, Integer> frequencies = new HashMap<>();
-        for (char character: string){
-            if (!frequencies.containsKey(character)){
+        for (char character : string) {
+            if (!frequencies.containsKey(character)) {
                 frequencies.put(character, 1);
             } else {
                 int frequency = frequencies.get(character);
                 frequencies.put(character, ++frequency);
             }
         }
-        Collection<Integer> values = frequencies.values();
-        int firstValue = values.iterator().next();
-
-        Iterator it = frequencies.entrySet().iterator();
-        while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry) it.next();
-            System.out.println(pair.getKey() + " = " + pair.getValue());
-            if (!(pair.getValue()).equals(firstValue)){
-                System.out.println("String is NOT valid");
-                return false;
-            }
-        }
-        System.out.println("String is valid");
-        return false;
+        return frequencies;
     }
 
     private boolean canYouRemoveJustOneCharacter() {
