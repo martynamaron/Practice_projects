@@ -60,7 +60,7 @@ public enum Exercise {
     VALID_STRINGS(7, "Find a valid string") {
         @Override
         public void runExercise() {
-            ValidStrings validStrings = new ValidStrings("Martyna");
+            ValidStrings validStrings = new ValidStrings("aabbccddd");
             validStrings.isTheStringValid();
         }
     };
