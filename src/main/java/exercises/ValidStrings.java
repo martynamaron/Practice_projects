@@ -1,6 +1,8 @@
 package exercises;
 
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * https://www.hackerrank.com/challenges/sherlock-and-valid-string
@@ -8,15 +10,19 @@ import java.util.*;
 public class ValidStrings {
 
     private final char[] stringAsCharArray;
+    private final String stringToCheck;
 
     public ValidStrings(String stringToCheck) {
+        this.stringToCheck = stringToCheck;
         stringAsCharArray = stringToCheck.toCharArray();
-        for (char a : stringAsCharArray) {
-            System.out.println(a);
-        }
     }
 
     public boolean isTheStringValid() {
+        if (!isStringLegal(stringToCheck)) {
+            System.out.println("String contains illegal, or uppercase characters");
+            return false;
+        }
+
         Map<Character, Integer> frequencies = getCharFrequencyMap(stringAsCharArray);
         if (areAllCharacterFrequenciesEqual(frequencies)) {
             System.out.println("All frequencies are equal");
@@ -66,6 +72,12 @@ public class ValidStrings {
             }
         }
         return false;
+    }
+    private boolean isStringLegal(String string){
+        String regex = "[a-z]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(string);
+        return matcher.matches();
     }
 
     private Map<Character, Integer> getCharFrequencyMap(char[] string) {
