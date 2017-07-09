@@ -68,12 +68,22 @@ public enum Exercise {
                 System.out.println("String NOT valid!");
             }
         }
+    },
+
+    ROMAN_NUMERALS(8, "Convert to roman numerals") {
+        @Override
+        public void runExercise() {
+            int num = UserInput.readInteger(INSTRUCTION_ROMAN_NUMERALS);
+            RomanNumerals romanNumerals = new RomanNumerals();
+            System.out.println("Conversion: " + romanNumerals.convertToRomanNumerals(num));
+        }
     };
 
     private final int exerciseNumber;
     private final String exerciseDescription;
     private static final String INSTRUCTION_FOR_INT = "Provide a number no greater than 1000 you'd like to check: ";
     private static final String INSTRUCTION_FOR_STRING = "Provide a string you'd like to check: ";
+    private static final String INSTRUCTION_ROMAN_NUMERALS = "Provide a number no greater than 3999 you'd like to check: ";
 
     Exercise(int number, String description) {
         exerciseNumber = number;
