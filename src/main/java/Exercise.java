@@ -60,8 +60,12 @@ public enum Exercise {
     VALID_STRINGS(7, "Find a valid string") {
         @Override
         public void runExercise() {
-            ValidStrings validStrings = new ValidStrings("aabbccdd");
-            validStrings.isTheStringValid();
+            ValidStrings validStrings = new ValidStrings("martynamaron");
+            if (validStrings.isTheStringValid()) {
+                System.out.println("String is valid!");
+            } else {
+                System.out.println("String NOT valid!");
+            }
         }
     };
 
