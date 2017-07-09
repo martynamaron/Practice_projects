@@ -14,7 +14,7 @@ public enum Exercise {
         @Override
         public void runExercise() {
             PrimeNumberDetector primeNumberDetector = new PrimeNumberDetector();
-            int pickedNumber = UserInput.readInteger(INSTRUCTION);
+            int pickedNumber = UserInput.readInteger(INSTRUCTION_FOR_INT);
             try {
                 System.out.println(primeNumberDetector.detectPrimeNumber(pickedNumber));
             } catch (InvalidNumberException exception) {
@@ -26,7 +26,7 @@ public enum Exercise {
     STAR_SQUARE_DRAWER(3, "Speed coding exercise - draw 2 squares out of stars") {
         @Override
         public void runExercise() {
-            int pickedNumber = UserInput.readInteger(INSTRUCTION);
+            int pickedNumber = UserInput.readInteger(INSTRUCTION_FOR_INT);
             StarLineDrawer starLineDrawer = new StarLineDrawer(pickedNumber);
             starLineDrawer.generateSquare();
         }
@@ -60,7 +60,8 @@ public enum Exercise {
     VALID_STRINGS(7, "Find a valid string") {
         @Override
         public void runExercise() {
-            ValidStrings validStrings = new ValidStrings("martynamaron");
+            String wordToCheck = UserInput.readString(INSTRUCTION_FOR_STRING);
+            ValidStrings validStrings = new ValidStrings(wordToCheck);
             if (validStrings.isTheStringValid()) {
                 System.out.println("String is valid!");
             } else {
@@ -71,7 +72,8 @@ public enum Exercise {
 
     private final int exerciseNumber;
     private final String exerciseDescription;
-    private static final String INSTRUCTION = "Provide a number no greater than 1000 you'd like to check: ";
+    private static final String INSTRUCTION_FOR_INT = "Provide a number no greater than 1000 you'd like to check: ";
+    private static final String INSTRUCTION_FOR_STRING = "Provide a string you'd like to check: ";
 
     Exercise(int number, String description) {
         exerciseNumber = number;
