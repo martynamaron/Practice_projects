@@ -85,6 +85,15 @@ public enum Exercise {
             BeautifulArrangement arrangement = new BeautifulArrangement();
             arrangement.countArrangement(2);
         }
+    },
+
+    FIBONACCI(10, "Fibonacci numbers - recursion") {
+        @Override
+        public void runExercise() {
+            Fibonacci fibonacci = new Fibonacci();
+            int number = UserInput.readInteger("How many positions do you want to print?");
+            fibonacci.printFibonacciSequence(number);
+        }
     };
 
     private final int exerciseNumber;
