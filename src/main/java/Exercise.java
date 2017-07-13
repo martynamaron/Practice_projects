@@ -77,6 +77,14 @@ public enum Exercise {
             RomanNumerals romanNumerals = new RomanNumerals();
             System.out.println("Conversion: " + romanNumerals.convertToRomanNumerals(num));
         }
+    },
+
+    BEAUTIFUL_ARRANGEMENT(9, "Beautiful arrangement") {
+        @Override
+        public void runExercise() {
+            BeautifulArrangement arrangement = new BeautifulArrangement();
+            arrangement.countArrangement(2);
+        }
     };
 
     private final int exerciseNumber;
