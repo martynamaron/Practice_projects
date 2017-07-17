@@ -62,7 +62,7 @@ public class BeautifulArrangement {
                 }
             }
         }
-        System.out.println("all permuatations: " + newPermutations);
+        System.out.println("all permutations: " + newPermutations);
 
         return allPermutations;
     }
