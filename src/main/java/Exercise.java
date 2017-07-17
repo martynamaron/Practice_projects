@@ -83,7 +83,7 @@ public enum Exercise {
         @Override
         public void runExercise() {
             BeautifulArrangement arrangement = new BeautifulArrangement();
-            arrangement.countArrangement(2);
+            arrangement.countArrangement(3);
         }
     },
 
