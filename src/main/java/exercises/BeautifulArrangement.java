@@ -6,49 +6,54 @@ import java.util.List;
 //https://leetcode.com/problems/beautiful-arrangement/#/description
 public class BeautifulArrangement {
 
-    private List<List<Integer>> newPermutations = new ArrayList<List<Integer>>();
+    private List<Integer> initialArray = new ArrayList<>();;
+    private List<List<Integer>> newPermutations = new ArrayList<>();
 
-
-    public int countArrangement(int number) {
-        List<Integer> arrangement = new ArrayList<>();
-
+    public BeautifulArrangement(int number) {
         for (int i = 0; i < number; i++) {
-            arrangement.add(i + 1);
+            initialArray.add(i + 1);
+            System.out.println("Entries: " + initialArray.get(i));
         }
-        for (int i : arrangement) {
-            System.out.println("Entry: " + i);
-        }
-        isTheArrangementBeautiful(arrangement);
+    }
 
-        return 0;
+    public int countBeautifulArrangements() {
+        int arrangementCount = 0;
+        listAllArrayPermutations(initialArray);
+        for (List<Integer> permutation: newPermutations){
+            if (isTheArrangementBeautiful(permutation)) {
+                arrangementCount++;
+            }
+        }
+        return arrangementCount;
     }
 
     private boolean isTheArrangementBeautiful(List<Integer> arrangement) {
         int position;
         int entry;
-        listAllArrayPermutations(arrangement);
+
         for (int i = 0; i < arrangement.size(); i++) {
             position = i + 1;
             entry = arrangement.get(i);
             if (position % entry == 0 || entry % position == 0) {
-                return true;
+            } else {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     private List<List<Integer>> listAllArrayPermutations(List<Integer> arrangement) {
-        List<List<Integer>> allPermutations = new ArrayList<List<Integer>>();
+        List<List<Integer>> allPermutations = new ArrayList<>();
 
         if (arrangement.size() == 2) {
             allPermutations.add(arrangement);
-            List<Integer> newArray = new ArrayList<Integer>();
+            List<Integer> newArray = new ArrayList<>();
             newArray.add(arrangement.get(1));
             newArray.add(arrangement.get(0));
             allPermutations.add(newArray);
         } else {
             for (int element = 0; element < arrangement.size(); element++) {
-                List<Integer> arrayCopy = new ArrayList<Integer>(arrangement);
+                List<Integer> arrayCopy = new ArrayList<>(arrangement);
                 arrayCopy.remove(element);
                 allPermutations = listAllArrayPermutations(arrayCopy);
                 for (List<Integer> permutation : allPermutations) {
@@ -58,6 +63,7 @@ public class BeautifulArrangement {
             }
         }
         System.out.println("all permuatations: " + newPermutations);
+
         return allPermutations;
     }
 }

@@ -82,8 +82,9 @@ public enum Exercise {
     BEAUTIFUL_ARRANGEMENT(9, "Beautiful arrangement") {
         @Override
         public void runExercise() {
-            BeautifulArrangement arrangement = new BeautifulArrangement();
-            arrangement.countArrangement(3);
+            BeautifulArrangement arrangement = new BeautifulArrangement(4);
+            System.out.println("This many beautiful arrangements found: "
+                    + arrangement.countBeautifulArrangements());
         }
     },
 
