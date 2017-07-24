@@ -82,7 +82,8 @@ public enum Exercise {
     BEAUTIFUL_ARRANGEMENT(9, "Beautiful arrangement") {
         @Override
         public void runExercise() {
-            BeautifulArrangement arrangement = new BeautifulArrangement(4);
+            int number = UserInput.readInteger(INSTRUCTION_BEAUTIFUL_ARRANGEMENT);
+            BeautifulArrangement arrangement = new BeautifulArrangement(number);
             System.out.println("This many beautiful arrangements found: "
                     + arrangement.countBeautifulArrangements());
         }
@@ -102,6 +103,7 @@ public enum Exercise {
     private static final String INSTRUCTION_FOR_INT = "Provide a number no greater than 1000 you'd like to check: ";
     private static final String INSTRUCTION_FOR_STRING = "Provide a string you'd like to check: ";
     private static final String INSTRUCTION_ROMAN_NUMERALS = "Provide a number no greater than 3999 you'd like to check: ";
+    private static final String INSTRUCTION_BEAUTIFUL_ARRANGEMENT = "Provide a number no greater than 15 you'd like to check: ";
 
     Exercise(int number, String description) {
         exerciseNumber = number;

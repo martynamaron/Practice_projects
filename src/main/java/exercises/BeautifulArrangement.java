@@ -7,7 +7,6 @@ import java.util.List;
 public class BeautifulArrangement {
 
     private List<Integer> initialArray = new ArrayList<>();;
-    private List<List<Integer>> newPermutations = new ArrayList<>();
 
     public BeautifulArrangement(int number) {
         for (int i = 0; i < number; i++) {
@@ -18,8 +17,9 @@ public class BeautifulArrangement {
 
     public int countBeautifulArrangements() {
         int arrangementCount = 0;
-        listAllArrayPermutations(initialArray);
-        for (List<Integer> permutation: newPermutations){
+        List<List<Integer>> allPermutations = listAllArrayPermutations(initialArray);
+        System.out.println("All permutations: " + allPermutations);
+        for (List<Integer> permutation: allPermutations){
             if (isTheArrangementBeautiful(permutation)) {
                 arrangementCount++;
             }
@@ -45,25 +45,20 @@ public class BeautifulArrangement {
     private List<List<Integer>> listAllArrayPermutations(List<Integer> arrangement) {
         List<List<Integer>> allPermutations = new ArrayList<>();
 
-        if (arrangement.size() == 2) {
+        if (arrangement.size() == 0) {
             allPermutations.add(arrangement);
-            List<Integer> newArray = new ArrayList<>();
-            newArray.add(arrangement.get(1));
-            newArray.add(arrangement.get(0));
-            allPermutations.add(newArray);
         } else {
-            for (int element = 0; element < arrangement.size(); element++) {
+            for (int index = 0; index < arrangement.size(); index++) {
                 List<Integer> arrayCopy = new ArrayList<>(arrangement);
+                Integer element = arrayCopy.get(index);
                 arrayCopy.remove(element);
-                allPermutations = listAllArrayPermutations(arrayCopy);
-                for (List<Integer> permutation : allPermutations) {
-                    permutation.add(element + 1);
-                    newPermutations.add(permutation);
+                List<List<Integer>> temporaryPermutations = listAllArrayPermutations(arrayCopy);
+                for (List<Integer> permutation : temporaryPermutations) {
+                    permutation.add(element);
+                    allPermutations.add(permutation);
                 }
             }
         }
-        System.out.println("all permutations: " + newPermutations);
-
         return allPermutations;
     }
 }
