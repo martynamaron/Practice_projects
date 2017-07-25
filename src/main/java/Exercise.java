@@ -111,8 +111,17 @@ public enum Exercise {
         @Override
         public void runExercise() {
             BinaryComplement binaryComplement = new BinaryComplement();
-            int number = UserInput.readInteger("Chose a positivie integer");
+            int number = UserInput.readInteger("Chose a positive integer: " );
             System.out.println("Binary complement number is: " + binaryComplement.getBinaryComplement(number));
+        }
+    },
+
+    REVERSED_STRING(13, "Reverse the input string") {
+        @Override
+        public void runExercise() {
+            ReversedString reversedString = new ReversedString();
+            String input = UserInput.readString("Type in a string you want reversed: ");
+            System.out.println("Reversed: " + reversedString.reverseString(input));
         }
     };
 
