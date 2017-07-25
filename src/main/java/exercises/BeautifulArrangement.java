@@ -6,7 +6,7 @@ import java.util.List;
 //https://leetcode.com/problems/beautiful-arrangement/#/description
 public class BeautifulArrangement {
 
-    private List<Integer> initialArray = new ArrayList<>();;
+    private List<Integer> initialArray = new ArrayList<>();
 
     public BeautifulArrangement(int number) {
         for (int i = 0; i < number; i++) {
