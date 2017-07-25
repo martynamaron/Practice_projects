@@ -96,6 +96,15 @@ public enum Exercise {
             int number = UserInput.readInteger("How many positions do you want to print?");
             fibonacci.printFibonacciSequence(number);
         }
+    },
+
+    ARRAY_DUPLICATES(11, "Find duplicates in an array") {
+        @Override
+        public void runExercise() {
+            ArrayDuplicates arrayDuplicates = new ArrayDuplicates();
+            int[] numbers = {1,2,3,1,3,4};
+            System.out.println("Duplicates in the array are: " + arrayDuplicates.findDuplicates(numbers));
+        }
     };
 
     private final int exerciseNumber;
