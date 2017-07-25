@@ -105,6 +105,15 @@ public enum Exercise {
             int[] numbers = {1,2,3,1,3,4};
             System.out.println("Duplicates in the array are: " + arrayDuplicates.findDuplicates(numbers));
         }
+    },
+
+    BINARY_COMPLEMENT(12, "Find the binary complement of the number") {
+        @Override
+        public void runExercise() {
+            BinaryComplement binaryComplement = new BinaryComplement();
+            int number = UserInput.readInteger("Chose a positivie integer");
+            System.out.println("Binary complement number is: " + binaryComplement.getBinaryComplement(number));
+        }
     };
 
     private final int exerciseNumber;
