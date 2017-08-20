@@ -6,10 +6,19 @@ package exercises;
 
 public class SingleElementFinder {
 
-    // [1,1,2,3,3,4,4,8,8]3
     public int getSingleElement(int[] array) {
-
-        return 0;
+        boolean singleElementFound = false;
+        int index = 0;
+        while (!singleElementFound) {
+            if (array[index] == array[index+1]) {
+                index = index + 2;
+                if (index == array.length-1){
+                    singleElementFound = true;
+                }
+            } else {
+                singleElementFound = true;
+            }
+        }
+        return array[index];
     }
-
 }

@@ -123,6 +123,15 @@ public enum Exercise {
             String input = UserInput.readString("Type in a string you want reversed: ");
             System.out.println("Reversed: " + reversedString.reverseString(input));
         }
+    },
+
+    SINGLE_ELEMENT_FINDER(14, "Find a single element in an array of duplicates") {
+        @Override
+        public void runExercise() {
+            SingleElementFinder singleElementFinder = new SingleElementFinder();
+            int[] inputArray = {1,1,2,2,7,7,8,8,9,9,11};
+            System.out.println(singleElementFinder.getSingleElement(inputArray));
+        }
     };
 
     private final int exerciseNumber;
