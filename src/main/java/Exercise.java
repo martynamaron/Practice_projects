@@ -132,6 +132,16 @@ public enum Exercise {
             int[] inputArray = {1,1,2,2,7,7,8,8,9,9,11};
             System.out.println(singleElementFinder.getSingleElement(inputArray));
         }
+    },
+
+    ARRAY_MEDIAN(15, "Find the median of two arrays (for now their combined length has to be odd)") {
+        @Override
+        public void runExercise() {
+            ArrayMedian arrayMedian = new ArrayMedian();
+            int[] array1 = {1, 2, 5, 6, 8, 12};
+            int[] array2 = {23};
+            System.out.println(arrayMedian.findMedianOfTwoArraysOdd(array1, array2));
+        }
     };
 
     private final int exerciseNumber;
