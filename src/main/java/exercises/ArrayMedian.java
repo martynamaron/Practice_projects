@@ -31,4 +31,9 @@ public class ArrayMedian {
             return pivot;
         }
     }
+
+    public double findMedianOfTwoArraysEven(int[] array1, int[] array2) {
+
+        return 0.0;
+    }
 }
