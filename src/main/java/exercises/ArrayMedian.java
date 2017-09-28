@@ -4,32 +4,44 @@ public class ArrayMedian {
 
     public int findMedianOfTwoArraysOdd(int[] array1, int[] array2) {
 
-        int sum = array1.length + array2.length;
-        int medianIndex = (sum / 2) + 1;
-        System.out.println("Median position is: " + medianIndex);
+        int array1pointer = array1.length/2;
+        int array2pointer = array2.length/2;
+        boolean areArraysConsecutive = array1[array1.length-1] < array2[0]
+                || array1[0] > array2[array2.length-1];
+        int median = 0;
 
-        int counter = 1;
-        int pivot = 0;
+        while (median == 0) {
 
-        if (sum == 2) {
-            return (array1[0] + array2[0]) / 2;
-        } else {
-            int indexArray1 = 0;
-            int indexArray2 = 0;
-            while (counter != medianIndex) {
-                if (array1[indexArray1] < array2[indexArray2]) {
-                    indexArray1++;
-                    counter++;
-                    pivot = array2[indexArray2];
-                } else {
-                    indexArray2++;
-                    counter++;
-                    pivot = array1[indexArray1];
-                }
+            if (array1[array1pointer] > array2[array2pointer]) {
+                array1pointer--;
+                array2pointer++;
+            } else {
+                array1pointer++;
+                array2pointer--;
             }
-            System.out.println("The median of the two arrays is: " + pivot);
-            return pivot;
+            if (array1pointer >= array1.length) {
+                median = array2[array2pointer];
+            } else if (array1pointer == 0 && !areArraysConsecutive) {
+                median = array2[--array2pointer];
+            } else if (array1pointer == 0 && areArraysConsecutive) {
+                median = array2[array2pointer];
+            } else if (array1pointer < 0) {
+                median = array2[array2pointer];
+            } else if (array2pointer >= array2.length) {
+                median = array1[array1pointer];
+            } else if (array2pointer == 0 && !areArraysConsecutive) {
+                median = array1[--array1pointer];
+            } else if (array2pointer == 0 && areArraysConsecutive) {
+                median = array1[array1pointer];
+            } else if (array2pointer < 0) {
+                median = array1[array1pointer];
+            }
+
         }
+
+            System.out.println("The median of the two arrays is: " + median);
+            return median;
+
     }
 
     public double findMedianOfTwoArraysEven(int[] array1, int[] array2) {

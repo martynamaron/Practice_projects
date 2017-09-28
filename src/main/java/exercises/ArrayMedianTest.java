@@ -38,6 +38,14 @@ public class ArrayMedianTest {
         assertTrue(arrayMedian.findMedianOfTwoArraysOdd(array1, array2) == 5);
     }
 
+    @Test
+    public void findMedianOfTwoArrays_whenLongArray_returnsCorrectMedian() {
+        int [] array1 = {1, 2, 3, 35, 38, 41, 43, 51};
+        int[] array2 = {30, 40, 50};
+
+        assertTrue(arrayMedian.findMedianOfTwoArraysOdd(array1, array2) == 38);
+    }
+
 
     @Test
     public void findMedianOfTwoArraysOdd_whenOneArrayHasOnlyOneElementWhichIsTheHighest_returnsCorrectMedian(){
