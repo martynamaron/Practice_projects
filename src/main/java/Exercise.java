@@ -140,7 +140,7 @@ public enum Exercise {
             ArrayMedian arrayMedian = new ArrayMedian();
             int[] array1 = {1, 2, 5, 6, 8, 12};
             int[] array2 = {23};
-            System.out.println(arrayMedian.findMedianOfTwoArraysOdd(array1, array2));
+            System.out.println(arrayMedian.findMedianOfTwoArrays(array1, array2));
         }
     };
 
